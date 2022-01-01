@@ -1,0 +1,98 @@
+.widget {
+	margin: 0 0 1.5em;
+
+	// Make sure select elements fit in widgets.
+	select {
+		max-width: 100%;
+	}
+
+	&.widget_text {
+		p {
+			margin: 0;
+			padding-top: 1rem;
+		}
+	}
+}
+
+.berocket_single_filter_widget {
+
+	ul {
+		padding-left: 0.25rem;
+	}
+
+	button {
+		@include dt-normal-button;
+		width: 100%;
+	}
+
+	
+	.irs-bar,
+	.irs-handle i:first-child {
+		background-color: $header_text_color;
+	}
+
+	.irs-handle:hover i:first-child,
+	.irs--flat .state_hover i:first-child {
+		background-color: darken($header_text_color, 10%);
+		cursor: pointer;
+	}
+
+	.irs-line {
+		border-radius: 0;
+	}
+
+	.irs-to,
+	.irs-from,
+	.irs-single{
+		background-color: $header_text_color;
+		
+
+		&::before {
+			border-top-color: $header_text_color;
+		}
+	}
+
+	.irs-to,
+	.irs-from,
+	.irs-max,
+	.irs-min,
+	.irs-single {
+		font-size: 0.8rem;
+		border-radius: 0;
+	}
+
+	label {
+		display: inline-flex !important;
+		align-items: center;
+
+		.fa-star {
+			color: #222;
+		}
+
+		.fa-star-o {
+			color: lighten(#222, 20%);
+		}
+
+		&:hover {
+
+			.fa-star {
+				color: $header_text_color;
+			}
+
+			
+			.fa-star-o {
+				color: lighten($header_text_color, 15%);
+			}
+		}
+
+	}
+
+	.fa-star-o::before {
+		content: "\f005";
+	}
+
+	.fa-star,
+	.fa-star-o {
+		font-size: 1.15rem;
+	}
+}

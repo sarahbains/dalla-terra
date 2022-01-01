@@ -1,0 +1,56 @@
+.bestsellers-home {
+    margin: 2rem auto;
+}
+
+.bestsellers {
+    min-width: 100%;
+    justify-content: space-between;
+
+    .bestseller {
+        position: relative;
+        width: 20rem !important;
+        min-width: calc(25% - 1rem);
+        max-width: 100%;
+        box-sizing: border-box;
+        flex-grow: 1;
+
+        &::before {
+            content: '';
+            display: block;
+            padding-bottom: 100%;
+        }
+
+        a {
+            top: 0;
+            display: block;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+    
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            p {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                min-width: fit-content;
+                @include cta-button;
+            }
+
+            &:hover,
+            &:focus-within {
+                cursor: pointer;
+                outline: none;
+
+                .product-bg {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

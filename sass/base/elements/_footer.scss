@@ -1,0 +1,57 @@
+.site-footer{
+  display: flex; 
+  justify-content: space-around;
+  padding: 1rem 2rem;
+  flex-direction: column;
+
+  background-color: $footer_dark;
+  color:$main_font_beige ;
+
+  a {
+    color:$main_font_beige
+  }
+
+  a:hover {
+    color: $header_text_color;
+  }
+
+  a:visited {
+    color: $main_font_beige;
+  }
+
+  .contact-information {
+    max-width: 20rem;
+    text-align: left;
+    margin-bottom: 0;
+
+    .email,
+    .phone {
+      margin: 0.5rem 0;
+    }
+  }
+
+  @media screen and (min-width: 30rem) {
+    display: grid;
+    grid-template-areas:
+    'footer-nav social-nav'
+    'address address';
+
+    .contact-information {
+      grid-area: address;
+    }
+
+    #footer-navigation {
+      grid-area: footer-nav;
+    }
+
+    .social-navigation {
+      grid-area: social-nav;
+    }
+  }
+
+  @media screen and (min-width: 45rem) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}

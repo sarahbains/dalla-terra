@@ -1,0 +1,192 @@
+.post-type-archive-dt-locations {
+
+    .site {
+
+        .site-main {
+            .page-header {
+                max-width: 30rem;
+            }
+
+            .location-types {
+                width: 100%;
+
+                nav {
+                    width: 100%;
+
+                    .location-filter {
+                        display: block;
+                        width: 100%;
+                        margin-bottom: 1rem;
+                        @include dt-normal-button;
+
+                        &.toggled {
+                            background-color: $color__link-hover;
+                            color: white;
+                            border-color: darken($color__link-hover, 25%);
+                        }
+                    }
+                }
+            }
+
+            .leaflet-map {
+                width: 100%;
+                height: 30rem;
+                box-sizing: border-box;
+                z-index: 0;
+            }
+
+            .location {
+                position: relative;
+                max-height: 15rem;
+                overflow: hidden;
+                border: 1px solid black;
+                margin: 1rem auto;
+                padding: 0 1rem 3rem;
+                box-sizing: border-box;
+                transition: max-height 0.5s ease-in-out;
+                grid-template-columns: 40% 60%;
+
+                h2 {
+                    grid-area: header;
+                }
+
+                address {
+                    grid-area: address;
+                }
+
+                table {
+                    grid-area: hours;
+                    border-spacing: 0.5rem;
+
+                    p {
+                        margin: 0;
+                    }
+                }
+
+                &.toggled {
+                    max-height: 100vh;
+                }
+
+                &.hide {
+                    display: none;
+                }
+
+                .expand-btn {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+                    background-color: white;
+                    border: none;
+                    text-align: right;
+                    text-decoration: underline;
+                    height: 3rem;
+                    line-height: 3rem;
+                    padding: 0 1rem;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 28em) { 
+        .site {
+            .site-main {
+
+                .page-header {
+                    margin: auto;
+                }
+
+                .location-types { 
+                    max-width: 28rem;
+                    margin: auto;
+                }
+
+                .leaflet-map { 
+                    max-width: 35rem;
+                    margin: auto;
+                }
+
+                .location {
+                    max-width: 35rem;
+                    margin: 1rem auto;
+                }
+            }
+        }
+
+    }
+
+    @media screen and (min-width: 62em) {
+        main {
+            overflow: visible;
+        }
+
+        .site {
+            .site-main {
+                display: grid;
+                grid-template-areas: 
+                'header header'
+                'filters map'
+                'locations map';
+                grid-template-columns: minmax(30%, 30rem) minmax(55%, 1fr);
+                column-gap: 4rem;
+                padding: 0 4rem 2rem;
+
+                .page-header {
+                    margin: 0;
+                    max-width: 40rem;
+                    grid-area: header;
+                }
+
+                .map-wrapper {
+                    grid-area: map;
+                }
+
+                .location-types {
+                    max-width: 100%;
+                    width: 100%;
+                    grid-area: filters;
+                }
+
+                .leaflet-map {
+                    max-width: 100%;
+                    width: 100%;
+                    height: calc(100vh - #{$site-margin-top} - 6rem);
+                    margin: 0 auto 2rem;
+                    position: sticky !important;
+                    top: $site-margin-top + 2rem;
+                }
+
+                .locations-wrapper {
+                    grid-area: locations;
+                    width: 100%;
+
+                    .location {
+                        display: grid;
+                        grid-template-areas: 
+                        'header header'
+                        'address hours';
+                        column-gap: 1.5rem;
+                        grid-template-columns: 1fr 55%;
+
+                        h2 {
+                            grid-area: header;
+                        }
+        
+                        address {
+                            grid-area: address;
+                        }
+        
+                        table {
+                            grid-area: hours;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

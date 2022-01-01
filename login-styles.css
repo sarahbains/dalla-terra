@@ -1,0 +1,30 @@
+body.login {
+    background-color: #ebd693 ;
+}
+
+.login h1 a {
+	background-image: url('./images/logo.png');
+	background-image: none, url('./images/logo.png');
+	background-size: 190px 190px;
+	background-position: center top;
+	background-repeat: no-repeat;
+	color: #999;
+	height: 190px;
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 1.3em;
+	margin: 0 auto 25px;
+	padding: 0;
+	text-decoration: none;
+	width: 190px;
+	text-indent: -9999px;
+	outline: none;
+	overflow: hidden;
+	display: block;
+}
+
+.login form {
+    border: rgb(0, 65, 25) 2px solid;
+    background-color: #27473d9a;
+    color: white;
+}

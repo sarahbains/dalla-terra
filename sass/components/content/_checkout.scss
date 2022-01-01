@@ -1,0 +1,95 @@
+.woocommerce-checkout {
+
+    .site-main {
+
+        .woocommerce-form-coupon-toggle {
+            margin-top: 0.5rem;
+        }
+        
+        form {
+
+            .form-row {
+                display: flex;
+                flex-direction: column; 
+                position: relative;
+                z-index: 1;
+
+                input:not([type=checkbox]),
+                textarea {
+                    @include dt-normal-input;
+                    width: 100%;
+                    max-width: 100%;
+                }
+
+                .select2 {
+                    .select2-selection {
+                        border-radius: 0;
+                        border: 1px solid black;
+                    }
+
+                    &.select2-container--open .select2-selection,
+                    &.select2-container--focus .select2-selection {
+                        border-color: $header_text_color;
+                        box-shadow: 0px 0px 0px 1px $header_text_color;
+                        outline: none;
+                    }
+                }
+
+                .StripeElement {
+                    border-radius: 0;
+                    border: 1px solid black;
+                    transition: 0.25s ease-in-out;
+
+                    &.focused {
+                        border-color: $header_text_color;
+                        box-shadow: 0px 0px 0px 1px $header_text_color;
+                        outline: none;
+                    }
+                }
+            }
+        }
+
+        table {
+            @include dt-colored-table;
+        }
+
+        fieldset {
+            border: none;
+            padding: 0;
+            margin: 0
+        }
+
+        button[type=submit] {
+            @include dt-normal-button;
+            width: 100%;
+        }
+    }
+
+    
+    .select2-container {
+        .select2-dropdown {
+            border-radius: 0;
+            border: 1px solid $header_text_color;
+            box-shadow: 0px 0px 0px 1px $header_text_color;
+            border-top: none;
+
+            input {
+                @include dt-normal-input;
+            }
+
+            .select2-results {
+                .select2-results__option--highlighted {
+                    background-color: $header_text_color;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 52rem) {
+        .site-main {
+            max-width: 52rem;
+            margin: auto;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,111 @@
+.site {
+	margin-top: $site-margin-top;
+	display: grid;
+	grid-template-areas:
+		"header header"
+		"main main"
+		"footer footer";
+
+	@media screen and (min-width: 75em) {
+		grid-template-columns: minmax(20rem, 320px) auto;
+		grid-template-areas:
+			"header header"
+			"sidebar main"
+			"footer footer";
+	}
+}
+
+.site-header {
+	grid-area: header;
+}
+
+.site-main {
+	grid-area: main;
+	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
+	padding: 0 1rem 2rem;
+	min-height: calc(100vh - #{$header-height});
+}
+
+.widget-area {
+	position: fixed;
+	background-color: #fff;
+	width: 20rem;
+	max-width: 95%;
+	height: calc(100% - #{$header-height});
+	top: $header-height;
+	left: 0;
+	transform: translateX(-100%);
+
+	&.opened,
+	&.closed {
+		transition: transform 0.25s ease-in-out;
+	}
+
+	&.opened  {
+		transform: translateX(0);
+	}
+
+	.sidebar-wrapper {
+		display: flex;
+        flex-direction: column;
+		height: 100%;
+		padding: 0 1.5rem;
+		border-right: 1px solid transparentize(#000, 0.5);
+		overflow-y: auto;
+
+        .close-filters {
+            align-self: flex-end;
+            border: none;
+            background-color: transparent;
+            padding: 1rem 0;
+            font-size: 1rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .filter-controls {
+            display: flex;
+			align-items: center;
+			margin-top: auto;
+			margin-bottom: 1rem;
+
+			.berocket_single_filter_widget {
+				flex: 1;
+
+				.bapf_sfilter {
+					margin-bottom: 0;
+				}
+
+				&:first-child {
+					margin-right: 1rem;
+				}
+			}
+        }
+	}
+
+	@media screen and (min-width: 75em) {
+		grid-area: sidebar;
+		position: static;
+		transform: translateX(0);
+		height: 100%;
+		padding-bottom: 2rem;
+
+		.sidebar-wrapper {
+			position: sticky;
+			top: $site-margin-top;
+			height: calc(100vh - #{$site-margin-top} - 2rem);
+
+			.close-filters { 
+				display: none;
+			}
+		}
+	}
+}
+
+.site-footer {
+	grid-area: footer;
+}
+
+@import "no-sidebar";

@@ -1,0 +1,132 @@
+.page-id-24 {
+
+    section:not(.banner-section) {
+        margin: 4rem auto 0;
+    }
+
+    .banner-section {
+        height: 25rem;
+        width: 100%;
+        position: relative;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        h1 {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            margin: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background-color: rgba(#000, 0.25);
+            padding: 1rem;
+        }
+    }
+
+    .contact-form-section {
+        width: 100%;
+        margin: 4rem auto;
+
+        .wpforms-form {
+
+            .wpforms-field-container .wpforms-field-row {
+                width: 100%;
+                max-width: 100%;
+                display: flex;
+
+                input {
+                    flex: 1;
+                }
+            }
+            
+            .wpforms-field-container .wpforms-field input,
+            .wpforms-field-container .wpforms-field textarea {
+                @include dt-normal-input;
+                max-width: 100%
+            }
+
+            .wpforms-submit-container .wpforms-submit  {
+                @include dt-normal-button;
+                width: 100%;
+            }
+        }
+    }
+
+    @media screen and (min-width: 37.5em) {
+        section:not(.banner-section) {
+            max-width: 37.5rem;
+        }
+    }
+
+    @media screen and (min-width: 65em) {
+        .site-main {
+            display: grid;
+            grid-template-areas:
+            'banner banner'
+            'contact address'
+            'contact hours';
+    
+            .banner-section {
+                grid-area: banner;
+            }
+    
+            .contact-form-section {
+                grid-area: contact;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 3rem;
+
+                .wpforms-container {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                }
+
+                .wpforms-form { 
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+
+                    .wpforms-field-container {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+
+                        .wpforms-field-textarea {
+                            flex: 1;
+
+                            textarea {
+                                height: 100%;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .contact-container {
+                grid-area: address;
+            }
+
+            .opening-hours {
+                grid-area: hours;
+            }
+
+            .contact-container,
+            .opening-hours {
+                max-width: 30rem;
+                width: 100%;
+            }
+        }
+    }
+}

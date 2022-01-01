@@ -1,0 +1,26 @@
+.no-sidebar:not(.woocommerce-shop) {
+
+	.site {
+		margin-top: $site-margin-top;
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-areas:
+			"header"
+			"main"
+			"footer";
+	}
+
+	
+	.site-main {
+		padding: 0 1rem 2rem;
+		min-height: calc(100vh - #{$header-height});
+	}
+
+	&.page-id-3,
+	&.page-id-15 {
+		.site-main {
+			max-width: 65rem;
+			margin: auto;
+		}
+	}
+}

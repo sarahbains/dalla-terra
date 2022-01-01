@@ -1,0 +1,9 @@
+.product-bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    height: 60%;
+    transition: height 0.25s ease-in-out;
+}

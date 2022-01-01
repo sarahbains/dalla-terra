@@ -1,0 +1,33 @@
+.sticky {
+  display: block;
+}
+
+.updated:not(.published) {
+  display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0;
+}
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+
+
+.page-id-111 {
+
+  @media screen and (min-width: 58em) {
+    .site-main {
+      h1 {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}

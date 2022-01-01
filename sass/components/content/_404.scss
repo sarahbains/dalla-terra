@@ -1,0 +1,22 @@
+.error404 {
+	.not-found {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		min-height: calc(100vh - #{$header-height});
+		align-items: center;
+	}
+
+	.page-content {
+		div {
+			display: flex;
+			flex-direction: column;
+			max-width: fit-content;
+			align-items: stretch;
+		}
+
+		a {
+			@include dt-normal-button;
+		}
+	}
+}
